@@ -3,6 +3,15 @@ Affine
 
 Matrices describing affine transformation of the plane.
 
+Install
+----
+
+```bash
+npm i @sakitam-gis/affine -S
+
+import Affine from '@sakitam-gis/affine'
+```
+
 Usage
 -----
 
