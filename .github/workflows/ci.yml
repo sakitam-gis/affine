@@ -49,6 +49,8 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
+          # https://github.com/coverallsapp/github-action/issues/81
+          git-branch: master
           github-token: ${{ secrets.PKG_DEPLOY_TOKEN }}
           flag-name: ${{matrix.os}}-node-${{ matrix.node }}
           parallel: true
