@@ -2,7 +2,7 @@ import { test, expect, describe, beforeAll } from 'vitest';
 import Affine from '../src/index';
 
 beforeAll(async () => {
-  console.log(`[Affine]: start testing..`);
+  console.log(`[Affine]: start testing...`);
 });
 
 describe('translation', async () => {
