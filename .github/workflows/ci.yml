@@ -51,7 +51,7 @@ jobs:
         with:
           # https://github.com/coverallsapp/github-action/issues/81
           git-branch: master
-          github-token: ${{ secrets.PKG_DEPLOY_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: ${{matrix.os}}-node-${{ matrix.node }}
           parallel: true
 
