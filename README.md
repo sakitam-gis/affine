@@ -1,6 +1,6 @@
 ## Affine
 
-[![npm version](https://badgen.net/npm/v/@sakitam-gis/affine)](https://npm.im/@sakitam-gis/affine) [![npm downloads](https://badgen.net/npm/dm/@sakitam-gis/affine)](https://npm.im/@sakitam-gis/affine) [![Coverage Status](https://coveralls.io/repos/github/sakitam-gis/affine/badge.svg?branch=master)](https://coveralls.io/github/sakitam-gis/affine?branch=master)
+[![CI](https://github.com/sakitam-gis/affine/actions/workflows/ci.yml/badge.svg)](https://github.com/sakitam-gis/affine/actions/workflows/ci.yml) [![npm version](https://badgen.net/npm/v/@sakitam-gis/affine)](https://npm.im/@sakitam-gis/affine) [![npm downloads](https://badgen.net/npm/dm/@sakitam-gis/affine)](https://npm.im/@sakitam-gis/affine) [![Coverage Status](https://coveralls.io/repos/github/sakitam-gis/affine/badge.svg?branch=master)](https://coveralls.io/github/sakitam-gis/affine?branch=master)
 
 Matrices describing affine transformation of the plane.
 
