@@ -45,7 +45,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build and Test
-        run: pnpm test
+        run: pnpm test && pnpm coverage
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.PKG_DEPLOY_TOKEN }}
+          flag-name: ${{matrix.os}}-node-${{ matrix.node }}
+          parallel: true
 
   release:
     runs-on: ubuntu-latest
