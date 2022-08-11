@@ -46,8 +46,8 @@ describe('multiply', async () => {
     expect(t).toBeInstanceOf(Affine);
     expect(s).toBeInstanceOf(Affine);
     expect(t.multiply(s)).toEqual(new Affine(
-      -180, 1.40625, 0,
-      90, 0, -0.703125,
+      1.40625, 0, -180,
+      0, -0.703125, 90,
       0, 0, 1,
     ));
   });
@@ -55,9 +55,30 @@ describe('multiply', async () => {
     const t = new Affine(1, 2, 3, 4, 5, 6);
     expect(t).toBeInstanceOf(Affine);
     expect(t.multiply(Affine.identity()).toArray()).toEqual([
+      1, 2, 3,
+      4, 5, 6,
+      0, 0, 1
+    ]);
+  });
+});
+
+describe('gdal', async () => {
+  test('fromGdal', async () => {
+    const t = Affine.fromGdal(3, 1, 2, 6, 4, 5);
+    expect(t).toBeInstanceOf(Affine);
+    expect(t.toArray()).toEqual(new Affine(
+      1, 2, 3,
+      4, 5, 6,
+      0, 0, 1
+    ).toArray());
+  });
+
+  test('toGdal', async () => {
+    const t = new Affine(1, 2, 3, 4, 5, 6);
+    expect(t).toBeInstanceOf(Affine);
+    expect(t.toGdal()).toEqual([
       3, 1, 2,
       6, 4, 5,
-      0, 0, 1
     ]);
   });
 });

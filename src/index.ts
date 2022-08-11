@@ -76,15 +76,14 @@ class Affine {
     const [sa, sb, sc, sd, se, sf, _1, _2, _3] = this.toArray();
     const [oa, ob, oc, od, oe, of, _4, _5, _6] = a.toArray();
     return new Affine(
-      // sa * oa + sb * od, sa * ob + sb * oe, sa * oc + sb * of + sc,
-      // sd * oa + se * od, sd * ob + se * oe, sd * oc + se * of + sf,
-      sa * oc + sb * of + sc,
       sa * oa + sb * od,
       sa * ob + sb * oe,
+      sa * oc + sb * of + sc,
 
-      sd * oc + se * of + sf,
       sd * oa + se * od,
       sd * ob + se * oe,
+      sd * oc + se * of + sf,
+
       0.0, 0.0, 1.0,
     )
   }
@@ -94,6 +93,13 @@ class Affine {
       this.a, this.b, this.c,
       this.d, this.e, this.f,
       this.g, this.h, this.i,
+    ];
+  }
+
+  toGdal() {
+    return [
+      this.c, this.a, this.b,
+      this.f, this.d, this.e,
     ];
   }
 }
